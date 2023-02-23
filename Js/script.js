@@ -1,7 +1,7 @@
-const url = "http://universities.hipolabs.com/search?country=United+States";
-
 const schoolName = document.querySelector(".university");
 // const schoolWebsite = document.querySelector(".website");
+
+const url = "http://universities.hipolabs.com/search?country=United+States";
 
 const search = document.querySelector("#search");
 
@@ -20,7 +20,7 @@ async function makeApiCall() {
       if (e.target.dataset.id) {
         console.log(e.target.dataset.id);
 
-        console.log(results[e.target.dataset.id].web_pages);
+        console.log(results[e.target.dataset.id]);
       }
     });
 
@@ -30,7 +30,7 @@ async function makeApiCall() {
       }
 
       schoolName.innerHTML += `<div class="university" data-id=${i}>
-                                  <a href="details.html" data-id=${i}> ${results[i].name}</a>
+                                  <a href="details.html?data-id=${i}" > ${results[i].name}</a>
                                   <ul>
                                     <li>
                                     ${results[i].web_pages}

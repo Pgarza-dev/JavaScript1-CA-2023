@@ -7,6 +7,7 @@ const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
+const submitButton = document.querySelector("#submitButton");
 
 function validateForm() {
   event.preventDefault();
@@ -34,6 +35,17 @@ function validateForm() {
   } else {
     emailError.style.display = "block";
   }
+
+  // if (
+  //   checkLength(firstName.value, 0) === true &&
+  //   checkLength(subject.value, 9) === true &&
+  //   checkLength(address.value, 25) === true &&
+  //   validatEmail(email.value) === true
+  // ) {
+  //   submitButton.disabled = false;
+  // } else {
+  //   submitButton.disabled = true;
+  // }
 
   // if (firstName.value.trim().length > 0) {
   //   firstName.style.display = "none";

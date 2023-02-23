@@ -8,6 +8,8 @@ const id = params.get("id");
 
 console.log(id);
 
+//? the url needs to vary based on the search term
+//? e.g http://universities.hipolabs.com/search?name=marywood+university
 const url = "http://universities.hipolabs.com/search?country=United+States";
 
 async function makeApiCall() {
@@ -20,6 +22,7 @@ async function makeApiCall() {
 
     details.innerHTML = "";
 
+    //! for loop is not needed here, since you just want to display one result
     for (let i = 0; i < results.length; i++) {
       if (i === 25) {
         break;

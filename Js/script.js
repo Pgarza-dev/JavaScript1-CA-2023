@@ -15,7 +15,6 @@ async function makeApiCall() {
 
     schoolName.innerHTML = "";
 
-    // my api doesnt have id's so I am trying to addeventlistner to help target them
     document.addEventListener("click", (e) => {
       if (e.target.dataset.id) {
         console.log(e.target.dataset.id);
@@ -24,10 +23,17 @@ async function makeApiCall() {
       }
     });
 
+    //? I would replace this with a forEach loop
+    //? see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
     for (let i = 0; i < results.length; i++) {
+      //! not sure break will work in an if statement? Return would be better
       if (i === 25) {
         break;
       }
+
+      //? consider using document.createElement here
+      //? see https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+      //? Noroff how to render HTML safely: https://www.loom.com/share/5d0bff43baff456a8aa76d639d7ded62
 
       schoolName.innerHTML += `<div class="university" data-id=${i}>
                                   <a href="details.html?data-id=${i}" > ${results[i].name}</a>

@@ -9,6 +9,8 @@ const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
 const submitButton = document.querySelector("#submitButton");
 
+//! yoou need to pass in the event object to the function
+//! e.g. function validateForm(event) { ... }
 function validateForm() {
   event.preventDefault();
 

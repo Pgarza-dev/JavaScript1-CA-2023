@@ -1,5 +1,14 @@
-const url = "http://universities.hipolabs.com/search?country=United+States";
 const details = document.querySelector(".details");
+
+const queryString = document.location.search;
+
+const params = new URLSearchParams(queryString);
+
+const id = params.get("id");
+
+console.log(id);
+
+const url = "http://universities.hipolabs.com/search?country=United+States";
 
 async function makeApiCall() {
   try {
@@ -16,7 +25,8 @@ async function makeApiCall() {
         break;
       }
 
-      details.innerHTML += `<ul>
+      details.innerHTML += `<div class="university" data-id=${i}>
+                                  <ul>
                                     <li>
                                     ${results[i].country}
                                     </li>
@@ -26,7 +36,8 @@ async function makeApiCall() {
                                     <li>
                                     ${results[i].domains}
                                     </li>
-                                  </ul>`;
+                                  </ul>
+                              </div>`;
     }
   } catch (error) {
     console.log(error);

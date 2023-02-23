@@ -9,7 +9,7 @@ const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
 const submitButton = document.querySelector("#submitButton");
 
-function validateForm() {
+function validateForm(event) {
   event.preventDefault();
 
   if (checkLength(firstName.value, 0) === true) {

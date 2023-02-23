@@ -3,7 +3,7 @@ const url = "http://universities.hipolabs.com/search?country=United+States";
 const schoolName = document.querySelector(".university");
 // const schoolWebsite = document.querySelector(".website");
 
-const info = document.querySelector(".info");
+const search = document.querySelector("#search");
 
 async function makeApiCall() {
   try {
@@ -14,6 +14,7 @@ async function makeApiCall() {
     console.log(results);
 
     schoolName.innerHTML = "";
+
     // my api doesnt have id's so I am trying to addeventlistner to help target them
     document.addEventListener("click", (e) => {
       if (e.target.dataset.id) {
@@ -48,3 +49,11 @@ async function makeApiCall() {
 }
 
 makeApiCall();
+
+// search.onkeyup = function () {
+//   const searchValue = event.target.value.trim().toLowerCase();
+
+//   const filterSchools = universityName.filter(function (uni) {
+//     if (uni.full_name.toLowerCase().startsWith(searchValue)) return true;
+//   });
+// };

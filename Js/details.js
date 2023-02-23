@@ -18,6 +18,9 @@ async function makeApiCall() {
 
       details.innerHTML += `<ul>
                                     <li>
+                                    ${results[i].country}
+                                    </li>
+                                    <li>
                                     ${results[i].web_pages}
                                     </li>
                                     <li>

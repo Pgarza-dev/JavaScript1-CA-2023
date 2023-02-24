@@ -14,6 +14,7 @@ function validateForm(event) {
 
   if (checkLength(firstName.value, 0) === true) {
     nameError.style.display = "none";
+    // firstName.style.display = "none";
   } else {
     nameError.style.display = "block";
   }
@@ -71,7 +72,7 @@ function validateForm(event) {
   //   addressError.style.display = "block";
   // }
 
-  console.log("hello");
+  console.log("");
 }
 
 form.addEventListener("submit", validateForm);

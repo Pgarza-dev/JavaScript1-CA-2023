@@ -30,7 +30,7 @@ async function makeApiCall() {
       }
 
       schoolName.innerHTML += `<div class="university" data-id=${i}>
-                                  <a href="details.html?data-id=${i}" > ${results[i].name}</a>
+                                  <a href="details.html?name=${results[i].name}" > ${results[i].name}</a>
                                   <ul>
                                     <li>
                                     ${results[i].web_pages}

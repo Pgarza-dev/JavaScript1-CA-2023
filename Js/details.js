@@ -1,17 +1,29 @@
 const details = document.querySelector(".details");
 
-const queryString = document.location.search;
+// const queryString = document.location.search;
 
-const params = new URLSearchParams(queryString);
+// const params = new URLSearchParams(queryString);
 
-const id = params.get("id");
+// const id = params.get("id");
 
-console.log(id);
+// console.log(id);
 
 const url = "http://universities.hipolabs.com/search?country=United+States";
 
 async function makeApiCall() {
   try {
+    // get the query string
+    const queryString = document.location.search;
+
+    // create an object that will allows us to access all the query string parameters
+    const params = new URLSearchParams(queryString);
+
+    // get the id parameter from the query string
+    const name = params.get("name");
+    console.log({ name });
+
+    document.title = name;
+
     const response = await fetch(url);
 
     const results = await response.json();

@@ -13,19 +13,19 @@ function validateForm(event) {
   event.preventDefault();
 
   if (checkLength(firstName.value, 0) === true) {
-    firstName.style.display = "none";
+    nameError.style.display = "none";
   } else {
     nameError.style.display = "block";
   }
 
   if (checkLength(subject.value, 9) === true) {
-    subject.style.display = "none";
+    subjectError.style.display = "none";
   } else {
     subjectError.style.display = "block";
   }
 
   if (checkLength(address.value, 25) === true) {
-    address.style.display = "none";
+    addressError.style.display = "none";
   } else {
     addressError.style.display = "block";
   }

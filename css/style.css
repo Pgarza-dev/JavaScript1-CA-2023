@@ -48,9 +48,13 @@ form {
   margin-top: 2px;
 }
 
-.success {
+.form-submitted {
+  display: none;
   color: green;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  background: rgba(0, 255, 0, 0.1);
+  border-color: green;
+  width: 500px;
 }
 
 input {

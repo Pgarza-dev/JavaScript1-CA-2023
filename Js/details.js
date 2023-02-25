@@ -8,7 +8,7 @@ const details = document.querySelector(".details");
 
 // console.log(id);
 
-const url = "http://universities.hipolabs.com/search?country=United+States";
+const url = "https://dummyjson.com/products/1";
 
 async function makeApiCall() {
   try {
@@ -19,7 +19,7 @@ async function makeApiCall() {
     const params = new URLSearchParams(queryString);
 
     // get the id parameter from the query string
-    const name = params.get("name");
+    const name = params.get("id");
     console.log({ name });
 
     document.title = name;
@@ -32,25 +32,34 @@ async function makeApiCall() {
 
     details.innerHTML = "";
 
-    for (let i = 0; i < results.length; i++) {
-      if (i === 25) {
-        break;
-      }
+    // details.innerHTML += `<div class="university">${name}
+    //                         <ul>
 
-      details.innerHTML += `<div class="university" data-id=${i}>
-                                  <ul>
-                                    <li>
-                                    ${results[i].country}
-                                    </li>
-                                    <li>
-                                    ${results[i].web_pages}
-                                    </li>
-                                    <li>
-                                    ${results[i].domains}
-                                    </li>
-                                  </ul>
-                              </div>`;
-    }
+    //                           <li>${name.country}</li>
+    //                           <li>${name.web_pages}</li>
+    //                           <li>${name.domains}</li>
+    //                         </ul>
+    //                       </div>`;
+
+    // for (let i = 0; i < results.length; i++) {
+    //   if (i === 25) {
+    //     break;
+    //   }
+
+    //   details.innerHTML += `<div class="university" data-id=${i}>
+    //                               <ul>
+    //                                 <li>
+    //                                 ${results[i].country}
+    //                                 </li>
+    //                                 <li>
+    //                                 ${results[i].web_pages}
+    //                                 </li>
+    //                                 <li>
+    //                                 ${results[i].domains}
+    //                                 </li>
+    //                               </ul>
+    //                           </div>`;
+    // }
   } catch (error) {
     console.log(error);
     details.innerHTML = alert("error", error);

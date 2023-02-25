@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
 .search {
   border: 1px solid black;
   width: 300px;
@@ -20,8 +25,10 @@ li {
   list-style: none;
   padding: 0.5rem;
 }
-.university {
-  max-width: 600px;
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  /* max-width: 600px; */
 
   border-radius: 1rem;
   border: 1px solid black;

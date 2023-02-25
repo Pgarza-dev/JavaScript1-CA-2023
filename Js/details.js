@@ -10,7 +10,7 @@ const details = document.querySelector(".details");
 
 const url = "https://dummyjson.com/products/1";
 
-async function makeApiCall() {
+async function fetchProduct() {
   try {
     // get the query string
     const queryString = document.location.search;
@@ -19,10 +19,10 @@ async function makeApiCall() {
     const params = new URLSearchParams(queryString);
 
     // get the id parameter from the query string
-    const name = params.get("id");
-    console.log({ name });
+    const id = params.get("id");
+    console.log({ id });
 
-    document.title = name;
+    document.title = id;
 
     const response = await fetch(url);
 
@@ -31,6 +31,15 @@ async function makeApiCall() {
     console.log(results);
 
     details.innerHTML = "";
+
+    details.innerHTML += `<div class="details" >
+                                  <h1> ${results.title}</h1>
+                                  <img class="img" src=${results.images[1]} width="300px"/> 
+                                  <h2> ${results.description}</h2>
+                                  <h3> ${results.price}</h3>
+                                  <h3> ${results.rating} star rating</h3>
+                                  </div>
+                                `;
 
     // details.innerHTML += `<div class="university">${name}
     //                         <ul>
@@ -66,7 +75,7 @@ async function makeApiCall() {
   }
 }
 
-makeApiCall();
+fetchProduct();
 
 // const details = document.querySelector(".details");
 

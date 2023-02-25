@@ -20,14 +20,14 @@ async function makeApiCall() {
     for (let i = 0; i < items.length; i++) {
       console.log(items[i].title);
 
-      // filter out no//
-      // if (condition) {
-      // }
+      if (!items[i].images[1]) {
+        continue;
+      }
 
       ourProducts.innerHTML += `<div class="productContainer" >
-                                  <a href="details.html?name=${items[i].title}" > ${items[i].title}</a>
-                                  <a href="details.html"> <img class="img" src=${items[i].images[1]} width="300px"> </a>
-                                  <a href="details.html?name=${items[i].price}" > ${items[i].price}</a>
+                                  <a href="details.html?name=${items[i].title}" ><h1> ${items[i].title}</h1></a>
+                                  <a href="details.html"> <img class="img" src=${items[i].images[1]} width="300px"/> </a>
+                                  <a href="details.html?name=${items[i].price}"><h2> ${items[i].price} </h2></a>
                                   </div>
                                 `;
     }

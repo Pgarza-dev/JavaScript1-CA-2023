@@ -24,7 +24,7 @@ async function makeApiCall() {
       ourProducts.innerHTML += `<div class="product-card"  >
                                   <a href="details.html?id=${items[i].id}" ><h1> ${items[i].title}</h1></a>
                                   <a href="details.html?id=${items[i].id}"> <img class="img" src=${items[i].images[1]} width="300px"/> </a>
-                                  <a href="details.html?name=${items[i].price}"><h2>$${items[i].price} </h2></a>
+                                  <a href="details.html?id=${items[i].id}"><h2>$${items[i].price} </h2></a>
                                   </div>
                                 `;
     }

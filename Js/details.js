@@ -1,28 +1,32 @@
 const details = document.querySelector(".details");
 
-// const queryString = document.location.search;
+const queryString = document.location.search;
 
-// const params = new URLSearchParams(queryString);
+const params = new URLSearchParams(queryString);
 
-// const id = params.get("id");
+const id = params.get("id");
 
-// console.log(id);
+console.log(id);
 
-const url = "https://dummyjson.com/products/1";
+document.title = id;
+
+const url = "https://dummyjson.com/products/" + id;
+
+console.log(url);
 
 async function fetchProduct() {
   try {
-    // get the query string
-    const queryString = document.location.search;
+    // //get the query string
+    // const queryString = document.location.search;
 
-    // create an object that will allows us to access all the query string parameters
-    const params = new URLSearchParams(queryString);
+    // // create an object that will allows us to access all the query string parameters
+    // const params = new URLSearchParams(queryString);
 
-    // get the id parameter from the query string
-    const id = params.get("id");
-    console.log({ id });
+    // // get the id parameter from the query string
+    // const id = params.get("id");
+    // console.log({ id });
 
-    document.title = id;
+    // document.title = id;
 
     const response = await fetch(url);
 
